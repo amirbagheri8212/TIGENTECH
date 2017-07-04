@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Post TIGEN TECH{% endblock %}
+{% block stylesheet %}
+    <link href="{% static 'Posts/style.css'%}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="container detailsbar ">
+        <ul class="detailsp">
+            <div class="pull-left">
+                <li class="PostTitle">{{ Post.Title }}</li>
+            </div>
+            <div class="pull-right">
+                <li><a href="/posts/{{ Post.genre.pk }}/"><span class="glyphicon glyphicon-calendar"></span> Genre</a></li>
+                <li><a><span class="glyphicon glyphicon-pencil"></span> Authur</a></li>
+                <li><a><span class="glyphicon glyphicon-record"></span> Company</a></li>
+            </div>
+        </ul>
+    </div>
+    <div class="container posttextpro">
+        {{ Post.Complete_Text|safe }}
+    </div>
+    <div class="container detailsba ">
+        <ul class="detailsp">
+            <div class="pull-left">
+                <li class="PostTitle">Thanks for reading    {{ Post.Title }}</li>
+            </div>
+        </ul>
+    </div>
+{% endblock %}

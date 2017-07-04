@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}TIGEN TECH{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Fresca|Roboto+Condensed|Josefin+Sans|Indie+Flower|Pacifico|Orbitron" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet"  href="{% static 'base.css' %}"/>
+    <link rel="stylesheet" href="{% static 'mainpage/style.css' %}">
+    {% block stylesheet %}
+    {% endblock %}
+{#    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">#}
+    <link rel="stylesheet" href="{% static 'font awesome/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    {% block javascript %}
+
+    {% endblock %}
+    <script src="{% static 'base.js' %}"></script>
+    <script src="{% static 'ajax-googleapis/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</head>
+
+<body style={% block pagestylesheet %}{% endblock %}>
+<header>
+{#    <div class="clearfix"><img src="http://www.osii.com/images/cat-headers/banner-solutions-initiatives-microgrid.jpg"></div>#}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" style="font-family: 'Orbitron', sans-serif;" href="{% url 'MainPage:HomePage' %}">TIGEN TECH</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="{% block Programseries %}{% endblock %}"><a href="{% url 'ProgramSeriesUrl:ProgramSeriesPage' %}">
+                        <span class="glyphicon glyphicon-certificate"></span>&nbsp; Program Series
+                    </a></li>
+                    <li class="{% block teachprogramming %}{% endblock %}"><a href="{% url 'Teach:index' %}">
+                        <span class="glyphicon glyphicon-pencil"></span>&nbsp; Teach Programming
+                    </a></li>
+                    <li class="Store"><a href="/store/"><span class="glyphicon glyphicon-shopping-cart"></span> Store
+                    </a></li>
+                    {% if user.is_superuser %}
+                        <li><a href="/admin/">
+                            <span class="glyphicon glyphicon-user"></span>&nbsp; Admin Panel
+                        </a></li>
+                    {% endif %}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="{% block contact-us %}{% endblock %}"><a href="/construct/"><span class="glyphicon glyphicon-envelope"></span> Contact Us </a></li>
+                    <li class="{% block about-us %}{% endblock %}"><a href="/construct/"><span class="glyphicon glyphicon-briefcase"></span> About Us</a></li>
+                    {% if not user.is_authenticated %}
+                        <li class="{% block signup %}{% endblock %}"><a href="/signup/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li class="{% block login %}{% endblock %}"><a href="/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    {% else %}
+                        <li class=""><a href="/logout/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+{% block body %}
+{% endblock %}
+<div class="push"></div>
+<footer class="footer navbar-fixed-bottom">
+    <div class= "navbar navbar-inverse navbar-static-bottom">
+        <div class= "navbar-text pull-right">
+            <div class="col-md-12">
+                <ul class="social-network social-circle ser">
+                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="navbar-text pull-left">
+            <p class="Copyright"><a href="/" class="Copyright CopyrightLink">&copy;</a> Copyright 2017 by <a href="/" class="Copyright CopyrightLink">TIGEN TECH</a> All Right Reserved</p>
+        </div>
+        <div class="push"></div>
+        <div class="navbar container">
+
+            <hr class="style17 container">
+
+        </div>
+        <div class="navbar-text pull-left">
+            <div class="ContactUs ">
+                Contact Us By         <ul class="social-network social-circle ser">{% comment %}<i class="fa fa-telegram"></i>{% endcomment %}<li><a href="#" class="icoTelegram" title="Telegram"><i class="fa fa-telegram"></i></a></li></ul>
+            </div>
+        </div>
+
+        <div style="font-family: 'Fresca', sans-serif;" class="navbar container  Quote">
+            <div class="cool_hover"><p><b><em><strong>{% block QuoteText %}{% endblock QuoteText%}</strong></em></b></p></div>
+            <div style="font-family: 'Indie Flower', cursive;" class="QuoteFrom cool_hover2">{% block QuoteFrom %}{% endblock %}</div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}TIGEN Products{% endblock %}
+{% block Programseries %}active{% endblock %}
+{% block stylesheet %}<link rel="stylesheet" type="text/css" href="{% static 'programseries/style.css' %}">{% endblock %}
+{% block body%}
+    <h3>Program Series</h3>
+    <p>This Are TIGEN Tech Program Series Check Them Out.</p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    {% if all_programseries%}
+        {% for programserie in all_programseries %}
+            <div class="col-sm-4 col-lg-2">
+                    <div class="backg">
+                        <img src="{{ programserie.logo.url }}" class="img-responsive">
+                        <div class="caption" style="margin-left: 10px">
+                            <p>Products:{{ programserie.Title }}</p>
+                            <p>Company:{{ programserie.Company }}</p>
+                            <p>Genre:{{ programserie.genre }}</p>
+                            <a href="{{ programserie.pk }}/" role="button" class="btn btn-primary btn-sm" style=" margin-left: -5px; width: 100%;">View More</a>
+                        </div>
+                    </div>
+            </div>
+        {% endfor %}
+    {%else%}
+            <h1>No Program Series Found</h1>
+    {%endif%}
+{% endblock %}

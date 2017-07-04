@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Fresca');
+.detailsbar{
+    background-color: beige;
+    color: #000033;
+    font-size: 40px;
+    width: 80%;
+    height: 60px;
+    border-radius: 40px 40px 0px 0px;
+}
+.detailsba{
+    background-color: beige;
+    color: #000033;
+    font-size: 40px;
+    width: 80%;
+    height: 60px;
+    border-radius: 0px 0px 40px 40px;
+}
+.detailsp li a{
+    text-decoration: none;
+    font-size: 25px;
+
+}
+.detailsp li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.PostTitle{
+    font-family: 'Fresca', sans-serif;
+}
+.posttextpro{
+    background-color: ghostwhite;
+    padding: 30px 30px 20px 30px;
+    font-size: 25px;
+}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block Programseries %}active{% endblock %}
+{% block body %}
+    <div class="caption">
+        <h1>This Are {{ product.Title }} Programs</h1>
+    </div>
+    <img src="{{ program.Logo.url }}" class="img-responsive">
+    <div class="caption">
+        <hr>
+        <p style="color:gray;">Powered By {{ product.Company }} ||| Price: {{ program.price }} ||| Code Price: {{ program.codeprice }} ||| File Type: {{ program.file_type }} |||</p>
+        <hr>
+        {{ program.text }}
+    </div>
+{% endblock %}

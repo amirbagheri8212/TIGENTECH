@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}*Store*{% endblock %}
+{% load staticfiles %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'Store/style.css' %}">
+{% endblock %}
+{% block body %}
+    {% if Items %}
+        {% for Item in Items %}
+            <div class="col-sm-4 col-lg-2">
+                {% if Item.is_VIP == True %}
+                <div class="VIP" style="border: 2px yellow;">
+                {% else %}
+                <div class="NORMAL">
+                {% endif %}
+                    <img src="{{ Item.log.url }}" class="img-responsive">
+                    <div class="caption" style="padding-left: 10px;">
+                        <h3>{{ Item.name }}</h3>
+                        <p>&#9798;Company:{{ Item.Company }}</p>
+                        <p>&#9763;Published:{{ Item.Publish_Time }}</p>
+                        <p>&#9760;Price:{{ Item.Price }}</p>
+                        <p>&#9910;TYPE:{{ Item.group.Group_name }}</p>
+                        <a href="{{ Item.pk }}/" role="button" class="btn btn-primary btn-sm" style="margin-left: -5px; width: 100%">View More</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,11 @@
+.NORMAL{
+    background-color: red;
+}
+.VIP{
+    background-image: url("/static/bgold.jpg");
+
+}
+.VIP .caption{
+    background-color: white;
+    padding-left: -40px;
+}

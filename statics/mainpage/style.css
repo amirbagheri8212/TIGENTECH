@@ -1,0 +1,13 @@
+
+.post{
+    border-radius: 15px 50px;
+    background-color: #73AD21;
+    padding: 40px;
+    width: 95%;
+    height: 150px;
+}
+.posttitle{
+    font-size: 25px;
+    color: #00ad9c;
+}
+

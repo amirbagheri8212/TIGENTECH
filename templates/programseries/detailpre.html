@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+{#{% load staticfiles %}
+{#{% block body %}
+<p>You Are Looking For Product Series:{{product.Title}}</p>
+<p>Company:{{product.Company}}</p>
+<p>genre:{{product.genre}}</p>
+<li>#
+    <h2>Products:</h2>
+    <ul>
+        {% for program in programs %}
+            <li><a href="{% url 'Products:productdetail' program.id %}">{{ program.program_title }}</a> </li>
+        <li><a href="/products/{{ product.id }}/{{program.id}}/">{{program.program_title}}</a></li>
+        {%endfor%}
+
+    </ul>
+</li>
+{% endblock %}

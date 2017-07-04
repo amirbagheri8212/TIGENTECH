@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Tutorial List{% endblock %}
+{% block teachprogramming %}active{% endblock %}
+{% load staticfiles %}
+{% block body %}
+    {% if Language %}
+        {% for tutorial in Language %}
+            <div class="col-sm-4 col-lg-2">
+                <div class="backg">
+                    <img src="{{ tutorial.log.url }}" class="img-responsive">
+                    <div class="caption" style="margin-left: 10px;">
+                        <h3>{{ tutorial.name }}</h3>
+                        &#9798;Company:{{ tutorial.Company }}
+                        &#9763;Teacher:{{ tutorial.teacher }}
+                        &#9760;Price:{{ tutorial.price }}
+                        &#9910;TYPE:{{ tutorial.type }}
+                        <a href="{{ tutorial.pk }}/" role="button" class="btn btn-primary btn-sm" style="margin-left: -5px; width: 100%">View More</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1>No {{ Language.Language_Name }} Tutorials found yet.</h1>
+    {% endif%}
+{% endblock %}

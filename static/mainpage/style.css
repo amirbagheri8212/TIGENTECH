@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css?family=Teko|Shrikhand|Cabin+Condensed|Kalam|Coming+Soon');
+.postst{
+    font-family: 'Teko', sans-serif;
+    font-size: 35px;
+    width: 97%;
+    min-height: 100%;
+    flex: 1 0 auto;
+}
+hr.posthr {
+    border-top: 1px solid #8c8b8b;
+    text-align: center;
+    width: 100%;
+}
+hr.posthr::after {
+    content: '§';
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    top: -30.0px;
+    font-family: 'Shrikhand', cursive;
+    /*size / 1.2857142857142857142857142857143*/
+    padding: 0 -15px;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: #2e2e2e;
+    -webkit-transform: rotate(50deg);
+    -moz-transform: rotate(50deg);
+    transform: rotate(50deg);
+}
+.posthr:hover::after{
+    -moz-transform: rotate(410deg);
+    -webkit-transform: rotate(410deg);
+    -ms--transform: rotate(410deg);
+    transform: rotate(410deg);
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+
+}
+.posttitle{
+    margin: 15px 0px 0px 20px;
+}
+ul.PostDetails{
+    font-family: 'Cabin Condensed', sans-serif;
+    color: #818E96;
+    font-size: 20px;
+    margin-top: -20px;
+    text-decoration: none;
+    list-style: none;
+}
+ul.PostDetails{
+    display: inline-block;
+    position: relative;
+    font-family: 'Kalam', cursive;;
+}
+ul.PostDetails li{
+    display: inline;
+    margin-right: 25px;
+    margin-top: -40px;
+}
+
+ul.PostDetails li a{
+    text-decoration: none;
+}
+.PostFirstDisplay{
+    margin: 5px;
+    padding: 20px 40px 20px 20px;
+    background-color: white;
+    font-family: 'Coming Soon', cursive;
+    font-size: 20px;
+    color: black;
+}

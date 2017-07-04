@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Group TIGEN TECH{% endblock %}
+{% load staticfiles %}
+{% block stylesheet %}
+<link href="{% static 'Posts/genre.css' %}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <h2 class="title">{{ Genre.title }}</h2>
+    <h3 class="title">Posts in {{ Genre.title }}</h3>
+    {% for Post in Posts %}
+        <div class="col-sm-4 col-lg-2">
+            <div class="backg">
+                <div class="caption" style="background-color: ghostwhite;padding-left: 15px;padding-top: 15px;">
+                    <h3>{{ Post.Title }}</h3>
+                    <hr>
+                    <p>Genre: {{ Post.genre }}</p>
+                    <p>Authur: {{ Post.authur }}</p>
+                    <p>Company: {{ Post.Company }}</p>
+                    <hr>
+                    <p>{{ Post.First_Display|safe }}</p>
+                    <a href="{{ Post.pk }}/" role="button" class="btn btn-primary btn-sm" style="margin-left: -5px; width: 100%">View More</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
